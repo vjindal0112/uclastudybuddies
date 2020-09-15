@@ -44,7 +44,7 @@ export default function Header({title, description}) {
           },
         ]}
       >
-        {/* <link rel="canonical" href="https://ucla.studybuddies.ai" /> */}
+        <link rel="canonical" href="https://ucla.studybuddies.ai" />
       </Helmet>
     </>
   );
