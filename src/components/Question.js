@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { uclaBlue, uclaGold } from "../constants"
 
 const Wrapper = styled.div`
   margin: 20px auto;
@@ -12,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-  border: 4px solid #ffcb05;
+  border: 4px solid ${uclaGold};
   padding: 4px 8px;
   color: #fafafa;
   font-size: 18px;
@@ -20,7 +21,7 @@ const Button = styled.button`
 
   transition: all 0.5s;
   &:hover {
-    background-color: #ffcb05;
+    background-color: ${uclaGold};
   }
 `;
 
