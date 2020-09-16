@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ReactFullpage from "@fullpage/react-fullpage";
 import Question from "./Question";
 import { withRouter } from "react-router-dom";
@@ -7,11 +7,20 @@ import Slider from "./Slider";
 
 const Form = ({ history }) => {
   const [data, setData] = useState({
-    "interest": 2,
-    "binge-study": 2,
-    "study-sociability": 2,
-    "work-ethic": 2
+    name: "",
+    year: "",
+    gender: "",
+    class: "",
+    interest: "2",
+    ambition: "",
+    "binge-study": "2",
+    "work-ethic": "2",
+    "study-sociability": "2",
+    "student-org": "",
+    email: "",
   });
+
+  const [reset, setReset] = useState(false);
 
   const keys = [
     "name",
@@ -32,7 +41,11 @@ const Form = ({ history }) => {
     for (var key in data) {
       formData.append(key, data[key]);
     }
+    setData({ ...data, "class": "", "interest": "2", "ambition": "" });
     alert("not working yet");
+    console.log(data);
+    setReset(reset => !reset);
+
 
     // UNCOMMENT to check for all filled in
     // for (var i = 0; i < keys.length; i++) {
@@ -49,6 +62,10 @@ const Form = ({ history }) => {
     //   "https://script.google.com/macros/s/AKfycbxsJCRqzZa84wWw3YEIjutxl9rJ6vq8yxrUoGLIg3ahtgWKQgo/exec",
     //   { method: "POST", body: formData }
     // );
+  }
+
+  function submit() {
+    pushToSheets();
     history.push("/submitted");
   }
 
@@ -56,11 +73,14 @@ const Form = ({ history }) => {
     setData({ ...data, [key]: value });
   }
 
+  useEffect(() => {} ,[data]);
+
   return (
     <ReactFullpage
       //fullpage options
       scrollingSpeed={1000} /* Options here */
       autoScrolling={false}
+      fitToSection={false}
       render={({ state, fullpageApi }) => {
         return (
           <ReactFullpage.Wrapper>
@@ -70,7 +90,9 @@ const Form = ({ history }) => {
               keyName={keys[0]}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[0]]}
             />
+            {console.log(data)}
 
             <SelectBar
               title="What year are you?"
@@ -79,6 +101,7 @@ const Form = ({ history }) => {
               choices={year}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[1]]}
             />
 
             <SelectBar
@@ -88,15 +111,18 @@ const Form = ({ history }) => {
               choices={gender}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[2]]}
             />
 
             <SelectBar
               title="Which class are you taking?"
               label="Class"
               keyName={keys[3]}
-              choices={singleClass}
+              choices={options}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[3]]}
+              reset={reset}
             />
 
             <Slider
@@ -104,6 +130,7 @@ const Form = ({ history }) => {
               keyName={keys[4]}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[4]]}
             />
 
             <SelectBar
@@ -113,6 +140,8 @@ const Form = ({ history }) => {
               choices={grades}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[5]]}
+              reset={reset}
             />
 
             <Slider
@@ -120,6 +149,7 @@ const Form = ({ history }) => {
               keyName={keys[6]}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[6]]}
             />
 
             <Slider
@@ -127,6 +157,7 @@ const Form = ({ history }) => {
               keyName={keys[7]}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[7]]}
             />
 
             <Slider
@@ -134,6 +165,7 @@ const Form = ({ history }) => {
               keyName={keys[8]}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[8]]}
             />
 
             <SelectBar
@@ -143,15 +175,18 @@ const Form = ({ history }) => {
               choices={orgs}
               moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
               onChange={onChangeListener}
+              initial={data[keys[9]]}
             />
 
             <Question
-              title="What's your UMich email?"
+              title="What's your UCLA email?"
               label="Email"
               keyName={keys[10]}
               moveSectionDown={pushToSheets}
               onChange={onChangeListener}
+              submitFunction={submit}
               submit={true}
+              initial={data[keys[10]]}
             />
           </ReactFullpage.Wrapper>
         );

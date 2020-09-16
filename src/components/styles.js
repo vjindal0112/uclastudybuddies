@@ -1,15 +1,30 @@
 import styled, { keyframes } from 'styled-components'
-import { uclaBlue, uclaGold } from '../constants'
+import { collegeDark, collegeLight } from '../constants'
 
 export const Button = styled.a`
-  border: 4px solid ${uclaGold};
+  border: 4px solid ${collegeLight};
   padding: 12px;
   margin: 24px;
   color: #fafafa;
 
   transition: all 0.5s;
   &:hover {
-    background-color: ${uclaGold};
+    background-color: ${collegeLight};
+    color: ${collegeDark};
+  }
+`;
+
+export const QuestionButton = styled.button`
+  border: 4px solid ${collegeLight};
+  padding: 4px 8px;
+  margin: 10px;
+  color: #fafafa;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0);
+
+  transition: all 0.5s;
+  &:hover {
+    background-color: ${collegeLight};
   }
 `;
 
@@ -40,7 +55,7 @@ const Banner = styled.div`
   position: absolute;
   top:0%;
   width: 100%;
-  background-color: ${uclaGold};
+  background-color: ${collegeLight};
   color: #00274C;
   height: 40px;
   display: flex;

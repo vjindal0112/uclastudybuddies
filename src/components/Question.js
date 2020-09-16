@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { uclaBlue, uclaGold } from "../constants"
+import { collegeDark, collegeLight } from "../constants"
+import { QuestionButton } from "./styles"
 
 const Wrapper = styled.div`
   margin: 20px auto;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Button = styled.button`
-  border: 4px solid ${uclaGold};
+  border: 4px solid ${collegeLight};
   padding: 4px 8px;
   color: #fafafa;
   font-size: 18px;
@@ -21,7 +22,7 @@ const Button = styled.button`
 
   transition: all 0.5s;
   &:hover {
-    background-color: ${uclaGold};
+    background-color: ${collegeLight};
   }
 `;
 
@@ -66,11 +67,14 @@ const Question = ({
   keyName,
   moveSectionDown,
   onChange,
+  submitFunction,
   submit,
+  initial
 }) => {
-  const [value, setValue] = useState("");
+  // const [value, setValue] = useState(initial);
 
-  useEffect(() => {}, [keyName]);
+  useEffect(() => {
+  }, [keyName, initial]);
 
   return (
     <div className="section">
@@ -87,21 +91,37 @@ const Question = ({
             }
           }}
           onChange={(e) => {
-            setValue(e.target.value);
+            // setValue(e.target.value);
             onChange(keyName, e.target.value);
           }}
-          value={value}
+          value={initial}
           placeholder={label}
         />
       </Wrapper>
 
-      <Button
+      <QuestionButton
         onClick={() => {
           moveSectionDown();
+          if(submit) { // when someone wants to submit another class
+            window.scrollTo({
+              top: window.innerHeight * 3,
+              left: 0,
+              behavior: 'smooth'
+            });
+          }
         }}
       >
-        {submit ? "Submit" : "Enter"}
-      </Button>
+        {submit ? "Another Class" : "Enter"}
+      </QuestionButton>
+      {submit ? (
+        <QuestionButton
+          onClick={() => {
+            submitFunction();
+          }}
+        >
+          Submit
+        </QuestionButton>
+      ) : null}
     </div>
   );
 };
