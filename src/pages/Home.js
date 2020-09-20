@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import logo from "../StudyBuddyLogo.png";
 import Header from "../components/Header"
 import CountUp from "react-countup";
-import { Button } from "../components/styles" // styles used for shared styles
+import { Button, UserCount } from "../components/styles" // styles used for shared styles
 
 
 const Heading = styled.h1`
@@ -12,6 +12,7 @@ const Heading = styled.h1`
     font-size: 40px;
   }
   padding: 10px;
+  font-weight: 400;
 `;
 
 const Logo = styled.img`
@@ -34,11 +35,7 @@ const TextDiv = styled.div`
   text-justify: inter-word;
 `;
 
-const UserCount = styled.div`
-  margin: 0px 8px;
-  color: #ffcb05;
-  font-weight: 800;
-`;
+
 
 
 export default function Home() {

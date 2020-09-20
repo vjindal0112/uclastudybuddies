@@ -2,20 +2,20 @@ import styled, { keyframes } from 'styled-components'
 import { collegeDark, collegeLight } from '../constants'
 
 export const Button = styled.a`
-  border: 4px solid ${collegeLight};
+  border: 4px solid ${collegeDark};
   padding: 12px;
   margin: 24px;
   color: #fafafa;
 
   transition: all 0.5s;
   &:hover {
-    background-color: ${collegeLight};
-    color: ${collegeDark};
+    background-color: ${collegeDark};
+    color: #fafafa;
   }
 `;
 
 export const QuestionButton = styled.button`
-  border: 4px solid ${collegeLight};
+  border: 4px solid ${collegeDark};
   padding: 4px 8px;
   margin: 10px;
   color: #fafafa;
@@ -24,7 +24,7 @@ export const QuestionButton = styled.button`
 
   transition: all 0.5s;
   &:hover {
-    background-color: ${collegeLight};
+    background-color: ${collegeDark};
   }
 `;
 
@@ -65,3 +65,9 @@ const Banner = styled.div`
   animation: ${drop} 6s ease-out;
   opacity: 0;
 `
+
+export const UserCount = styled.div`
+  margin: 0px 8px;
+  color: ${collegeDark};
+  font-weight: 800;
+`;
