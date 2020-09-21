@@ -42,7 +42,6 @@ const SelectBar = ({
   initial,
   reset
 }) => {
-  // const [value, setValue] = useState(initial);
   useEffect(() => {
   }, [keyName, choices, initial, reset]);
 
@@ -64,6 +63,8 @@ const SelectBar = ({
           options={choices}
           inputValue={initial}
           onInputChange={(e) => {
+            console.log("onInputChange");
+            console.log(e);
             if (e !== "" && typeof e != "object") {
               onChange(keyName, e);
             } else if (initial.length === 1 && typeof e != "object") {
@@ -71,6 +72,8 @@ const SelectBar = ({
             }
           }}
           onChange={(newValue, actionMeta) => {
+            console.log("onInputChange");
+            console.log(newValue);
             if (actionMeta.action === "select-option") {
               onChange(keyName, newValue.value);
             }
