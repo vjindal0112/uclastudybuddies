@@ -73,7 +73,7 @@ const Form = ({ history }) => {
     setData({ ...data, class: "", interest: "2", ambition: "" });
     setReset((reset) => !reset);
     setAnimate(true);
-    setTimeout(bannerUp, 3000);
+    setTimeout(bannerUp, 4000);
     fetch(
       "https://script.google.com/macros/s/AKfycbzJW7Dc_WJou_aaO1DdZ0SYefzESNb90DRkoCSCRLejwybRGfg/exec",
       { method: "POST", body: formData }
@@ -110,7 +110,7 @@ const Form = ({ history }) => {
         return (
           <>
           <ReactFullpage.Wrapper>
-          <SaveBanner animate={animate}>Saved your class, fill out 3 fields for another</SaveBanner>
+          <SaveBanner animate={animate}>Saved your class, fill out these 3 fields for another</SaveBanner>
             <Question
               title="To start off, what's your full name?"
               label="Full Name"
