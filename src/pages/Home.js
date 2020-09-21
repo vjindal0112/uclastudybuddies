@@ -39,11 +39,11 @@ const TextDiv = styled.div`
 
 
 export default function Home() {
-  const [userCount, setUserCount] = useState(6000);
+  const [userCount, setUserCount] = useState(0);
 
   useEffect(() => {
     fetch(
-      "https://script.google.com/macros/s/AKfycbxP3gykUXOcNunlc7uvzvwPiBcL1h44XzxSjsn3Vvu1vW0XB7U/exec"
+      "https://script.google.com/macros/s/AKfycbzwc7T1NUAcXzwqXvGu7BpFmQtJudGhWMYSV47Y9Z8kRXi8aIQ/exec"
     )
       .then((snapshot) => snapshot.json())
       .then((num) => setUserCount(parseInt(num.number)));
@@ -63,11 +63,11 @@ export default function Home() {
             alignItems: "center",
           }}
         >
-          <div>Join</div>
+          {/* <div>Join</div>
           <UserCount>
-            <CountUp start={6000} end={userCount} />
+            <CountUp start={0} end={userCount} />
           </UserCount>
-          <div>Bruins</div>
+          <div>Bruins</div> */}
         </div>
         <Button href="/form">Find your Buddy</Button>
       </div>
