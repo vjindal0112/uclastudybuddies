@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import logo from "../StudyBuddyLogo.png";
-import Header from "../components/Header"
+import Header from "../components/Header";
 import CountUp from "react-countup";
-import { Button, UserCount } from "../components/styles" // styles used for shared styles
-
+import { Button, UserCount } from "../components/styles"; // styles used for shared styles
+import ReactGA from 'react-ga';
 
 const Heading = styled.h1`
   font-size: 60px;
@@ -35,9 +35,6 @@ const TextDiv = styled.div`
   text-justify: inter-word;
 `;
 
-
-
-
 export default function Home() {
   const [userCount, setUserCount] = useState(0);
 
@@ -51,7 +48,7 @@ export default function Home() {
 
   return (
     <>
-      <Header/>
+      <Header />
       <div className="App" style={{ height: "88vh", minHeight: "88vh" }}>
         <Logo src={logo} />
         <Heading>UCLA StudyBuddies</Heading>
@@ -69,7 +66,18 @@ export default function Home() {
           </UserCount>
           <div>Bruins</div> */}
         </div>
-        <Button href="/form">Find your Buddy</Button>
+        <Button
+          onClick={() => {
+            ReactGA.event({
+              category: "Navigation",
+              action: "Click",
+              label: "Find your Buddy",
+            });
+          }}
+          href="/form"
+        >
+          Find your Buddy
+        </Button>
       </div>
       <Section backgroundColor="#fefefe">
         <TextDiv>
@@ -92,8 +100,8 @@ export default function Home() {
           <h1 style={{ textAlign: "center" }}>How does it work?</h1>
           <p>
             Once you complete the form by entering your class and some of your
-            study habits (due October 3rd at noon!), we will let you know your Study
-            Buddies via email by October 5th.
+            study habits (due October 3rd at noon!), we will let you know your
+            Study Buddies via email by October 5th.
           </p>
           <p>
             We know that it's pretty hard to study with someone who you aren't
@@ -102,8 +110,8 @@ export default function Home() {
             together.
           </p>
           <p>
-            All of this data will be completely private, so you
-            have nothing to worry about.
+            All of this data will be completely private, so you have nothing to
+            worry about.
           </p>
         </TextDiv>
       </Section>
@@ -122,8 +130,8 @@ export default function Home() {
             <b>When is the last day I can fill this out?</b>
           </p>
           <p>
-            The form will close on October 3rd at noon because we want to
-            get you your StudyBuddies by October 5th.
+            The form will close on October 3rd at noon because we want to get
+            you your StudyBuddies by October 5th.
           </p>
         </TextDiv>
       </Section>

@@ -12,14 +12,18 @@ export const Heading = styled.h1`
 `;
 
 export const Button = styled.a`
-  border: 4px solid ${collegeLight};
+  border: 3px solid ${collegeLight};
+  background-color: ${collegeLight};
   padding: 12px;
   margin: 24px;
-  color: #fafafa;
+  color: ${collegeDark};
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 
   transition: all 0.5s;
   &:hover {
-    background-color: ${collegeLight};
+    border: 3px solid #EFC100;
+    background-color: #EFC100;
     color: #fafafa;
   }
 `;
@@ -52,16 +56,19 @@ export const Input = styled.input`
 `;
 
 export const QuestionButton = styled.button`
-  border: 4px solid ${collegeLight};
+  border: 3px solid ${collegeLight};
+  background-color: ${collegeLight};
   padding: 4px 8px;
   margin: 10px;
-  color: #fafafa;
+  color: ${collegeDark};
   font-size: 18px;
-  background-color: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 
   transition: all 0.5s;
   &:hover {
-    background-color: ${collegeLight};
+    border: 3px solid #EFC100;
+    background-color: #EFC100;
   }
 `;
 
@@ -93,7 +100,8 @@ export const SaveBanner = styled.div`
   top:0%;
   width: 100%;
   background-color: ${collegeLight};
-  color: #fafafa;
+  color: ${collegeDark};
+  font-size: 18px;
   height: ${props => props.animate ? "40px" : "0px"};
   display: flex;
   justify-content: center;
@@ -102,8 +110,6 @@ export const SaveBanner = styled.div`
   transition: all 2s cubic-bezier(0,1.01,.4,.99);
   opacity: ${props => props.animate ? "1" : "0"};
   z-index: 3;
-
-
 `;
 
 const Banner = styled.div`
