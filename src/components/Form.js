@@ -512,6 +512,7 @@ const options = [
 {value: "CHEM 17 - Scerri",label:"CHEM 17 - Scerri"},
 {value: "CHEM 19 - Gresser",label:"CHEM 19 - Gresser"},
 {value: "CHEM 20A - Felker",label:"CHEM 20A - Felker"},
+{value: "CHEM 20AH - Sportsman",label:"CHEM 20AH - Sportsman"},
 {value: "CHEM 30A - Reilly",label:"CHEM 30A - Reilly"},
 {value: "CHEM 30AL - Pang",label:"CHEM 30AL - Pang"},
 {value: "CHEM 30B - Merlic",label:"CHEM 30B - Merlic"},
