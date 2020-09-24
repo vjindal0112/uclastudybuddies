@@ -60,6 +60,7 @@ export default function Home() {
             alignItems: "center",
           }}
         >
+          <div>Like a dating site but for finding a study group</div>
           {/* <div>Join</div>
           <UserCount>
             <CountUp start={0} end={userCount} />
@@ -76,7 +77,7 @@ export default function Home() {
           }}
           href="/form"
         >
-          Find your Buddy
+          Find your Buddies
         </Button>
       </div>
       <Section backgroundColor="#fefefe">
