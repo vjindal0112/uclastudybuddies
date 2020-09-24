@@ -53,7 +53,7 @@ const Form = ({ history }) => {
         return false;
       }
       if (!data["email"].toLowerCase().includes("@g.ucla.edu")) {
-        alert("Please enter your UCLA email");
+        alert("Please enter your @g.ucla.edu email");
         return false;
       }
       if(data["number"].length != 14) {
