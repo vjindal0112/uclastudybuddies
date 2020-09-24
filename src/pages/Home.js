@@ -58,6 +58,8 @@ export default function Home() {
             flexDirection: "row",
             justifyContent: "center",
             alignItems: "center",
+            marginRight: "10px",
+            marginLeft: "10px",
           }}
         >
           <div>Like a dating site but for finding a study group</div>
