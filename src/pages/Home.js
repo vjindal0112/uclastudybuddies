@@ -4,7 +4,7 @@ import logo from "../StudyBuddyLogo.png";
 import Header from "../components/Header";
 import CountUp from "react-countup";
 import { Button, UserCount } from "../components/styles"; // styles used for shared styles
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
 const Heading = styled.h1`
   font-size: 60px;
@@ -62,7 +62,6 @@ export default function Home() {
             marginLeft: "10px",
           }}
         >
-          <div>Like a dating site but for finding a study group</div>
           {/* <div>Join</div>
           <UserCount>
             <CountUp start={0} end={userCount} />
