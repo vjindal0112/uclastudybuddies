@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { collegeDark, collegeLight } from "../constants";
-import { QuestionButton, Input } from "./styles";
+import { QuestionButton, Input, Select } from "./styles";
 import ReactGA from "react-ga";
 
 const Wrapper = styled.div`
@@ -81,15 +81,21 @@ const Question = ({
       </QuestionWrapper>
       <Wrapper>
         {number ? (
-          <Input
-            key={keyName}
-            onChange={(e) => {
-              // setValue(e.target.value);
-              onChange(keyName, normalizeInput(e.target.value, initial));
-            }}
-            value={initial}
-            placeholder="(XXX) XXX-XXXX"
-          />
+          <>
+            <Select>
+              <option>US</option>
+              <option>Intl</option>
+            </Select>
+            <Input
+              key={keyName}
+              onChange={(e) => {
+                // setValue(e.target.value);
+                onChange(keyName, normalizeInput(e.target.value, initial));
+              }}
+              value={initial}
+              placeholder="(XXX) XXX-XXXX"
+            />
+          </>
         ) : (
           <Input
             style={{ color: "#fafafa", outline: "#fafafa" }}

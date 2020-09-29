@@ -12,11 +12,11 @@ export const Heading = styled.h1`
 `;
 
 export const Button = styled.a`
-  border: 3px solid ${collegeLight};
-  background-color: ${collegeLight};
+  border: 3px solid ${collegeDark};
+  background-color: ${collegeDark};
   padding: 12px;
   margin: 24px;
-  color: ${collegeDark};
+  color: ${collegeLight};
   border-radius: 4px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 
@@ -56,11 +56,11 @@ export const Input = styled.input`
 `;
 
 export const QuestionButton = styled.button`
-  border: 3px solid ${collegeLight};
-  background-color: ${collegeLight};
+  border: 3px solid ${collegeDark};
+  background-color: ${collegeDark};
   padding: 4px 8px;
   margin: 10px;
-  color: ${collegeDark};
+  color: ${collegeLight};
   font-size: 18px;
   border-radius: 4px;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -131,3 +131,11 @@ export const UserCount = styled.div`
   color: ${collegeLight};
   font-weight: 800;
 `;
+
+export const Select = styled.select`
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 8px;
+
+`
