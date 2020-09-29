@@ -56,7 +56,7 @@ const Form = ({ history }) => {
         alert("Please enter your @g.ucla.edu email");
         return false;
       }
-      if (data["number"].length != 14) {
+      if (data["number"].replace(/[^\d]/g, "").length < 10) {
         alert("Please enter a valid phone number");
         return false;
       }
@@ -80,7 +80,7 @@ const Form = ({ history }) => {
     );
     if (anotherClass) {
       window.scrollTo({
-        top: window.innerHeight * 3,
+        top: window.innerHeight * 4,
         left: 0,
         behavior: "smooth",
       });
@@ -113,6 +113,13 @@ const Form = ({ history }) => {
               <SaveBanner animate={animate}>
                 Saved your class, fill out these 3 fields for another
               </SaveBanner>
+
+              <Privacy
+                message="Once you fill this out, we'll match you with 3 buddies in your class based on the similarity of your responses"
+                moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
+                buttonMessage="Let's get started"
+              />
+
               <Question
                 title="To start off, what's your full name?"
                 label="Full Name"

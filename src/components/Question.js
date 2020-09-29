@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { collegeDark, collegeLight } from "../constants";
-import { QuestionButton, Input } from "./styles";
+import { QuestionButton, Input, Select } from "./styles";
 import ReactGA from "react-ga";
 
 const Wrapper = styled.div`
@@ -34,6 +34,17 @@ const QuestionWrapper = styled.div`
     width: 90%;
   }
 `;
+
+const intlNormalize = (value) => {
+  if (!value) return value;
+
+  const currentValue = value.replace(/[^\d]/g, "");
+  const cvLength = currentValue.length;
+  if(cvLength > 15) {
+    return currentValue.slice(0,15);
+  }
+  return currentValue;
+}
 
 const normalizeInput = (value, previousValue) => {
   // return nothing if no value
@@ -71,6 +82,7 @@ const Question = ({
   number,
 }) => {
   // const [value, setValue] = useState(initial);
+  const [selectVal, setSelectVal] = useState("US");
 
   useEffect(() => {}, [keyName, onChange, initial]);
 
@@ -81,15 +93,28 @@ const Question = ({
       </QuestionWrapper>
       <Wrapper>
         {number ? (
-          <Input
-            key={keyName}
-            onChange={(e) => {
-              // setValue(e.target.value);
-              onChange(keyName, normalizeInput(e.target.value, initial));
-            }}
-            value={initial}
-            placeholder="(XXX) XXX-XXXX"
-          />
+          <>
+            <Select onChange={(e) => {
+              console.log(e.target.value);
+              setSelectVal(e.target.value);
+            }}>
+              <option>US</option>
+              <option>Intl</option>
+            </Select>
+            <Input
+              key={keyName}
+              onChange={(e) => {
+                // setValue(e.target.value);
+                if(selectVal != "Intl") {
+                  onChange(keyName, normalizeInput(e.target.value, initial));
+                } else {
+                  onChange(keyName, intlNormalize(e.target.value));
+                }
+              }}
+              value={initial}
+              placeholder={selectVal != "Intl" ? "(XXX) XXX-XXXX" : "XXXXXXXXXXXXXXX"}
+            />
+          </>
         ) : (
           <Input
             style={{ color: "#fafafa", outline: "#fafafa" }}

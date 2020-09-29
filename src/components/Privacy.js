@@ -20,7 +20,7 @@ const QuestionWrapper = styled.div`
   }
 `;
 
-const Privacy = ({ message, moveSectionDown }) => {
+const Privacy = ({ message, moveSectionDown, buttonMessage }) => {
 
   return (
     <div className="section">
@@ -40,7 +40,7 @@ const Privacy = ({ message, moveSectionDown }) => {
           moveSectionDown();
         }}
       >
-        Ok
+        {buttonMessage ? buttonMessage : "Ok"}
       </QuestionButton>
     </div>
   );

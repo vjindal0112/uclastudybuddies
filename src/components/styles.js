@@ -131,3 +131,12 @@ export const UserCount = styled.div`
   color: ${collegeLight};
   font-weight: 800;
 `;
+
+export const Select = styled.select`
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 8px;
+  margin-right: 12px;
+
+`
