@@ -35,6 +35,17 @@ const QuestionWrapper = styled.div`
   }
 `;
 
+const intlNormalize = (value) => {
+  if (!value) return value;
+
+  const currentValue = value.replace(/[^\d]/g, "");
+  const cvLength = currentValue.length;
+  if(cvLength > 15) {
+    return currentValue.slice(0,15);
+  }
+  return currentValue;
+}
+
 const normalizeInput = (value, previousValue) => {
   // return nothing if no value
   if (!value) return value;
@@ -71,6 +82,7 @@ const Question = ({
   number,
 }) => {
   // const [value, setValue] = useState(initial);
+  const [selectVal, setSelectVal] = useState("US");
 
   useEffect(() => {}, [keyName, onChange, initial]);
 
@@ -82,7 +94,10 @@ const Question = ({
       <Wrapper>
         {number ? (
           <>
-            <Select>
+            <Select onChange={(e) => {
+              console.log(e.target.value);
+              setSelectVal(e.target.value);
+            }}>
               <option>US</option>
               <option>Intl</option>
             </Select>
@@ -90,10 +105,14 @@ const Question = ({
               key={keyName}
               onChange={(e) => {
                 // setValue(e.target.value);
-                onChange(keyName, normalizeInput(e.target.value, initial));
+                if(selectVal != "Intl") {
+                  onChange(keyName, normalizeInput(e.target.value, initial));
+                } else {
+                  onChange(keyName, intlNormalize(e.target.value));
+                }
               }}
               value={initial}
-              placeholder="(XXX) XXX-XXXX"
+              placeholder={selectVal != "Intl" ? "(XXX) XXX-XXXX" : "XXXXXXXXXXXXXXX"}
             />
           </>
         ) : (
