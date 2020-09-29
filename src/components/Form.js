@@ -113,6 +113,13 @@ const Form = ({ history }) => {
               <SaveBanner animate={animate}>
                 Saved your class, fill out these 3 fields for another
               </SaveBanner>
+
+              <Privacy
+                message="Once you fill this out, we'll match you with 3 buddies in your class by similarity"
+                moveSectionDown={fullpageApi && fullpageApi.moveSectionDown}
+                buttonMessage="Let's get started"
+              />
+
               <Question
                 title="To start off, what's your full name?"
                 label="Full Name"
