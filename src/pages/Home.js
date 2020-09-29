@@ -90,7 +90,7 @@ export default function Home() {
       <Header />
       <div className="App" style={{ height: "88vh", minHeight: "88vh" }}>
         <Logo src={logo} />
-        <Heading>UCLA StudyBuddies</Heading>
+        <Heading>StudyBuddies at UCLA</Heading>
         <div
           style={{
             display: "flex",
