@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import styled from "styled-components";
 import { Button } from "../components/styles"; // styles used for shared styles
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
 const Texth4 = styled.h4`
   max-width: 50%;

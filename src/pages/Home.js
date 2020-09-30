@@ -182,6 +182,15 @@ export default function Home() {
             The form will close on October 3rd at noon because we want to get
             you your StudyBuddies by October 5th.
           </p>
+          <p>
+            <b>Where can I find more information?</b>
+          </p>
+          <p>
+            Check out our medium post here:{" "}
+            <a href="https://medium.com/@vjindal0112/why-we-made-studybuddies-493beda5d8f7">
+              Why We Made StudyBuddies
+            </a>
+          </p>
         </TextDiv>
       </Section>
     </>
