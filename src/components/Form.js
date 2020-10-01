@@ -1255,6 +1255,10 @@ const options = [
     value: "UNDERGRADUATE 196R - Bailey",
     label: "UNDERGRADUATE 196R - Bailey",
   },
+  {
+    value: "ENG 115D",
+    label: "ENG 115D",
+  },
   { value: "UNDERGRADUATE 197 - Wilson", label: "UNDERGRADUATE 197 - Wilson" },
   { value: "EC ENGR 1 - Alwan", label: "EC ENGR 1 - Alwan" },
   { value: "EC ENGR 2 - Sokolich", label: "EC ENGR 2 - Sokolich" },
