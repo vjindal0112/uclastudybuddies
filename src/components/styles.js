@@ -112,7 +112,8 @@ export const SaveBanner = styled.div`
   z-index: 3;
 `;
 
-const Banner = styled.div`
+export const Banner = styled.div`
+  font-size: 18px;
   position: absolute;
   top: 0%;
   width: 100%;
@@ -123,7 +124,7 @@ const Banner = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  animation: ${drop} 6s ease-out;
+  animation: ${drop} 4.5s ease-out;
   opacity: 0;
 `;
 export const UserCount = styled.div`

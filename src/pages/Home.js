@@ -3,7 +3,7 @@ import styled, { keyframes } from "styled-components";
 import logo from "../StudyBuddyLogo.png";
 import Header from "../components/Header";
 import CountUp from "react-countup";
-import { Button, UserCount } from "../components/styles"; // styles used for shared styles
+import { Button, UserCount, Banner } from "../components/styles"; // styles used for shared styles
 import ReactGA from "react-ga";
 import { collegeDark, collegeLight } from "../constants";
 
@@ -89,6 +89,7 @@ export default function Home() {
     <>
       <Header />
       <div className="App" style={{ height: "88vh", minHeight: "88vh" }}>
+        <Banner>Final date to fill out is now Oct 6!</Banner>
         <Logo src={logo} />
         <Heading>StudyBuddies at UCLA</Heading>
         <div
