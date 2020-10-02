@@ -89,7 +89,7 @@ export default function Home() {
     <>
       <Header />
       <div className="App" style={{ height: "88vh", minHeight: "88vh" }}>
-        <Banner>Final date to fill out is now Oct 6!</Banner>
+        <Banner>Final date to fill out is now Oct 10!</Banner>
         <Logo src={logo} />
         <Heading>StudyBuddies at UCLA</Heading>
         <div
@@ -131,7 +131,7 @@ export default function Home() {
           <br />
           <Flex>
             <BulletPoints>2</BulletPoints>
-            <BulletText>Get your buddies Oct. 8</BulletText>
+            <BulletText>Get your buddies Oct. 12</BulletText>
           </Flex>
           <br />
           <Flex>
@@ -180,8 +180,8 @@ export default function Home() {
             <b>When is the last day I can fill this out?</b>
           </p>
           <p>
-            The form will close on October 6th at noon because we want to get
-            you your StudyBuddies by October 8th.
+            The form will close on October 10th at noon because we want to get
+            you your StudyBuddies by October 12th.
           </p>
           <p>
             <b>Where can I find more information?</b>
