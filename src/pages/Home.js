@@ -75,7 +75,7 @@ const BulletPoints = styled.div`
 `;
 
 export default function Home() {
-  const [userCount, setUserCount] = useState(200);
+  const [userCount, setUserCount] = useState(1800);
 
   useEffect(() => {
     fetch(
@@ -104,7 +104,7 @@ export default function Home() {
         >
           <div>Join</div>
           <UserCount>
-            <CountUp start={200} end={userCount} />
+            <CountUp start={1800} end={userCount} />
           </UserCount>
           <div>Bruins</div>
         </div>
