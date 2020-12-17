@@ -1,15 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 import App from "./App";
 import Submitted from "./pages/Submitted";
-import Home from "./pages/Home"
+import Home from "./pages/Home";
+import Feedback from "./pages/Feedback";
+import Raffle from "./pages/Raffle";
 import * as serviceWorker from "./serviceWorker";
 import FormPage from "./pages/FormPage";
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import 'bootstrap-css-only/css/bootstrap.min.css';
-import 'mdbreact/dist/css/mdb.css';
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import "bootstrap-css-only/css/bootstrap.min.css";
+import "mdbreact/dist/css/mdb.css";
 
 const routing = (
   <Router>
@@ -18,6 +20,8 @@ const routing = (
       <Route path="/form" component={FormPage} />
       <Route path="/submitted" component={Submitted} />
       <Route path="/home" component={Home} />
+      <Route path="/feedback" component={Feedback} />
+      <Route path="/Raffle" component={Raffle} />
     </Switch>
   </Router>
 );
