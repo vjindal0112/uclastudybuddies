@@ -28,7 +28,7 @@ const Raffle = () => {
       <Header title="Raffle" />
       <div className="App" style={{ padding: "4px" }}>
         <br /> <br />
-        <h1>Winner: ...</h1>
+        <h1>Winner: ...?</h1>
         <br /> <br />
         <Texth4>
           The winner will be notified on December 24th here and via email!{" "}
