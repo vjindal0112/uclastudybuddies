@@ -40,11 +40,11 @@ const intlNormalize = (value) => {
 
   const currentValue = value.replace(/[^\d]/g, "");
   const cvLength = currentValue.length;
-  if(cvLength > 15) {
-    return currentValue.slice(0,15);
+  if (cvLength > 15) {
+    return currentValue.slice(0, 15);
   }
   return currentValue;
-}
+};
 
 const normalizeInput = (value, previousValue) => {
   // return nothing if no value
@@ -94,10 +94,12 @@ const Question = ({
       <Wrapper>
         {number ? (
           <>
-            <Select onChange={(e) => {
-              console.log(e.target.value);
-              setSelectVal(e.target.value);
-            }}>
+            <Select
+              onChange={(e) => {
+                console.log(e.target.value);
+                setSelectVal(e.target.value);
+              }}
+            >
               <option>US</option>
               <option>Intl</option>
             </Select>
@@ -105,14 +107,16 @@ const Question = ({
               key={keyName}
               onChange={(e) => {
                 // setValue(e.target.value);
-                if(selectVal != "Intl") {
+                if (selectVal != "Intl") {
                   onChange(keyName, normalizeInput(e.target.value, initial));
                 } else {
                   onChange(keyName, intlNormalize(e.target.value));
                 }
               }}
               value={initial}
-              placeholder={selectVal != "Intl" ? "(XXX) XXX-XXXX" : "XXXXXXXXXXXXXXX"}
+              placeholder={
+                selectVal != "Intl" ? "(XXX) XXX-XXXX" : "XXXXXXXXXXXXXXX"
+              }
             />
           </>
         ) : (
@@ -134,7 +138,7 @@ const Question = ({
         )}
       </Wrapper>
 
-      <QuestionButton
+      {/*<QuestionButton
         onClick={() => {
           if (submit) {
             ReactGA.event({
@@ -149,7 +153,7 @@ const Question = ({
         }}
       >
         {submit ? "Add Another Class" : "Enter"}
-      </QuestionButton>
+      </QuestionButton>*/}
       {submit ? (
         <>
           <br />
@@ -158,15 +162,28 @@ const Question = ({
               ReactGA.event({
                 category: "Navigation",
                 action: "Click",
-                label: "Submit All Classes",
+                label: "Submit",
               });
               submitFunction();
             }}
           >
-            Submit All Classes
+            Submit
           </QuestionButton>
         </>
-      ) : null}
+      ) : (
+        <QuestionButton
+          onClick={() => {
+            ReactGA.event({
+              category: "Navigation",
+              action: "Click",
+              label: "Submit",
+            });
+            moveSectionDown();
+          }}
+        >
+          Enter
+        </QuestionButton>
+      )}
     </div>
   );
 };

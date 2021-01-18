@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 
-export default function Header({title, description}) {
+export default function Header({ title, description }) {
   return (
     <>
       <Helmet
@@ -9,17 +9,21 @@ export default function Header({title, description}) {
         meta={[
           {
             name: "description",
-            content:
-              description ? description : "Get paired with study buddies in your class at UCLA. We only match you with people we know you will vibe with.",
+            content: description
+              ? description
+              : "Get paired with study buddies in your class at UCLA. We only match you with people we know you will vibe with.",
           },
           {
-            name: "og:title", 
-            content: title ? `${title} | UCLA StudyBuddies` : "UCLA StudyBuddies",
+            name: "og:title",
+            content: title
+              ? `${title} | UCLA StudyBuddies`
+              : "UCLA StudyBuddies",
           },
           {
             name: "og:description",
-            content:
-            description ? description : "Get paired with study buddies in your class at UCLA. We only match you with people we know you will vibe with.",
+            content: description
+              ? description
+              : "Get paired with study buddies in your class at UCLA. We only match you with people we know you will vibe with.",
           },
           { name: "og:url", content: "https://ucla.studybuddies.ai" },
           {
@@ -32,7 +36,9 @@ export default function Header({title, description}) {
           },
           {
             name: "twitter:title",
-            content: title ? `${title} | UCLA StudyBuddies` : "UCLA StudyBuddies",
+            content: title
+              ? `${title} | UCLA StudyBuddies`
+              : "UCLA StudyBuddies",
           },
           {
             name: "twitter:description",

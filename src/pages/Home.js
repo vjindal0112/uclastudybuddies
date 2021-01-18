@@ -89,7 +89,6 @@ export default function Home() {
     <>
       <Header />
       <div className="App" style={{ height: "88vh", minHeight: "88vh" }}>
-        <Banner>The form is now closed!</Banner>
         <Logo src={logo} />
         <Heading>StudyBuddies at UCLA</Heading>
         <div
@@ -118,7 +117,7 @@ export default function Home() {
           }}
           href="/form"
         >
-          Closed
+          Find your Buddies
         </Button>
       </div>
       <Section padding="20px" backgroundColor="#fefefe">
@@ -131,7 +130,7 @@ export default function Home() {
           <br />
           <Flex>
             <BulletPoints>2</BulletPoints>
-            <BulletText>Get your buddies Oct. 12</BulletText>
+            <BulletText>Get your buddies Jan. 31</BulletText>
           </Flex>
           <br />
           <Flex>
@@ -173,15 +172,16 @@ export default function Home() {
             <b>Can I fill the form out for more than one class?</b>
           </p>
           <p>
-            Yes! You’re encouraged to. We’d love to give you a group of
-            studybuddies for every class you’re taking this quarter.
+            We are only open for CS 181 this quarter. Tell the head of your
+            department to reach out to team@studybuddies.ai and we can open up
+            for the entire school again :)
           </p>
           <p>
             <b>When is the last day I can fill this out?</b>
           </p>
           <p>
-            The form will close on October 10th at noon because we want to get
-            you your StudyBuddies by October 12th.
+            The form will close on January 29th at noon because we want to get
+            you your StudyBuddies by January 31st.
           </p>
           <p>
             <b>Where can I find more information?</b>

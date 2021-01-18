@@ -18,10 +18,10 @@ const Submitted = () => {
       <div className="App">
         <h1>Congrats, and good luck!</h1>
         <Texth4>
-          You will hear back from us via email on October 12th with your study
-          buddies!
+          You will hear back from us via email on January 31st with your
+          studybuddies!
         </Texth4>
-        <Button
+        {/*<Button
           onClick={() => {
             ReactGA.event({
               category: "Navigation",
@@ -32,7 +32,7 @@ const Submitted = () => {
           href="/form"
         >
           Another Class
-        </Button>
+        </Button>*/}
       </div>
     </>
   );

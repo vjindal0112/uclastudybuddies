@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { QuestionButton } from './styles';
+import { QuestionButton } from "./styles";
 
 const Wrapper = styled.div`
   margin: 20px auto;
@@ -21,7 +21,6 @@ const QuestionWrapper = styled.div`
 `;
 
 const Privacy = ({ message, moveSectionDown, buttonMessage }) => {
-
   return (
     <div className="section">
       <QuestionWrapper
@@ -35,7 +34,7 @@ const Privacy = ({ message, moveSectionDown, buttonMessage }) => {
       </QuestionWrapper>
 
       <QuestionButton
-        style={{"padding-right" : "14px", "padding-left" : "14px"}}
+        style={{ "padding-right": "14px", "padding-left": "14px" }}
         onClick={() => {
           moveSectionDown();
         }}
