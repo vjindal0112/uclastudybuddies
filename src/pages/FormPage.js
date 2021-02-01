@@ -12,10 +12,8 @@ export default function FormPage() {
         description="Fill out this form to get paired with study buddies in your class at UCLA. We only match you with people we know you will vibe with."
       />
 
-      {/*<Banner>The form is now closed!</Banner>*/}
-      <div className="App">
-        <Form />
-      </div>
+      <Banner>The form is now closed!</Banner>
+      <div className="App">{/*<Form />*/}</div>
     </>
   );
 }

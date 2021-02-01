@@ -105,6 +105,7 @@ export default function Home() {
           <UserCount>
             <CountUp start={1800} end={userCount} />
           </UserCount>
+          <Banner>The form is closed!</Banner>
           <div>Bruins</div>
         </div>
         <Button
@@ -115,9 +116,8 @@ export default function Home() {
               label: "Closed",
             });
           }}
-          href="/form"
         >
-          Find your Buddies
+          Closed
         </Button>
       </div>
       <Section padding="20px" backgroundColor="#fefefe">
